@@ -3,9 +3,6 @@ import logo from "../img/USU-1.png";
 import { FaShoppingCart } from "react-icons/fa";
 import Order from "./Order";
 
-// import { Link } from "react-router-dom";
-// import About from "./About";
-
 const showOrders = (props) => {
   let total = 0;
   props.orders.forEach((el) => (total += Number.parseFloat(el.price)));
