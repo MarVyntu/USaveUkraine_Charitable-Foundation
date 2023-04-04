@@ -6,7 +6,7 @@ export class ShowFullItem extends Component {
       <div className="show-full-item">
         <div className="modal-full-item">
           <img
-            src={"./img/" + this.props.item.img}  alt="image" 
+            src={"./img/" + this.props.item.img}  alt="item-bay" 
             onClick={() => this.props.onShowItem(this.props.item)}
           />
           <h2>{this.props.item.title}</h2>

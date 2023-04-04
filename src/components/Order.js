@@ -5,7 +5,7 @@ export class Order extends Component {
   render() {
     return (
       <div className="item">
-        <img src={"./img/" + this.props.item.img} alt="image" />
+        <img src={"./img/" + this.props.item.img}  alt="item-bay" />
         <div className="bay-desc">
           <h2 className="bay-title">{this.props.item.title}</h2>
           <p className="bay-price">{this.props.item.price}$</p>
