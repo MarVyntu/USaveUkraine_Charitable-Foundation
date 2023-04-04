@@ -1,13 +1,326 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400&family=Montserrat:ital,wght@0,500;1,300;1,400&family=Open+Sans&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: whitesmoke;
+  color: rgb(50, 50, 50);
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
 }
+
+/* ----------------------------------------------------------- */
+
+.wrapper {
+  width: 1200px;
+  margin: 50px auto;
+}
+
+/* ----------------------------------------------------------- */
+header {
+  position: relative;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  font-weight: 700;
+  font-size: 30px;
+  padding: 10px 10px;
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+/* ----------------------------------------------------------- */
+header .shop-button {
+  cursor: pointer;
+  color: rgb(50, 50, 50);
+  margin-right: 25px;
+  transition: color 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+header .shop-button:hover,
+header .shop-button.active {
+  color: rgb(196, 31, 2);
+  transform: scale(1.5);
+}
+
+header .shop-card {
+  position: absolute;
+  top: 43px;
+  right: 0;
+  width: 450px;
+  background: rgba(230, 230, 230, 0.95);
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 6px 16px -2px rgba(135, 133, 135, 0.76);
+  -moz-box-shadow: -2px 6px 16px -2px rgba(135, 133, 135, 0.76);
+  box-shadow: -2px 6px 16px -2px rgba(135, 133, 135, 0.76);
+  z-index: 100;
+  padding: 20px;
+  /* padding-bottom: 0; */
+}
+
+/* ----------------------------------------------------------- */
+header .shop-card .item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+}
+
+header .shop-card .item img {
+  width: 70px;
+  /* float: left; */
+  margin-right: 20px;
+  margin: 10px 0;
+}
+
+header .shop-card .item .bay-desc {
+  align-content: start;
+  margin-top: 10px;
+}
+
+header .shop-card .item h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+header .shop-card .item p {
+  color: rgb(120, 120, 120);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+header .shop-card .item .delete-icon {
+  color: rgb(196, 31, 2);
+  float: right;
+  position: relative;
+  top: -30px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+header .shop-card .item .delete-icon:hover {
+  color: rgb(255, 0, 0);
+  transform: scale(1.5);
+}
+
+header .shop-card .total {
+  font-weight: 700;
+  /* width: 100%;
+  font-size: 20px; */
+  color: rgb(120, 120, 120);
+}
+
+/* ----------------------------------------------------------- */
+
+header .empty {
+  width: 100%;
+  text-align: center;
+  color: rgb(120, 120, 120);
+  font-size: 14px;
+}
+/* ----------------------------------------------------------- */
+
+header ul.nav {
+  display: flex;
+  justify-content: end;
+  list-style: none;
+}
+
+header ul.nav li {
+  font-weight: 700;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+header ul.nav li:hover {
+  opacity: 0.6;
+}
+
+/* ----------------------------------------------------------- */
+
+header .my-presentation {
+  margin: 50px auto;
+  background: url("./img/background-auction.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(188, 188, 188, 0.9);
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+header .my-presentation::after {
+  content: "USaveUkraine - Charitable Foundation";
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: aliceblue;
+  top: 80px;
+  left: 50px;
+  width: 300px;
+}
+
+header .my-presentation::before {
+  content: "USaveUkraine - Auction";
+  position: absolute;
+  font-size: 1em;
+  font-weight: 300;
+  color: aliceblue;
+  top: 150px;
+  left: 50px;
+  width: 300px;
+}
+
+/* ----------------------------------------------------------- */
+.categories div {
+  display: inline-block;
+  background: rgb(240, 240, 240);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+}
+.categories div:hover {
+  border: 1px solid rgb(50, 50, 50);
+  transform: scale(1.1);
+}
+
+/* ----------------------------------------------------------- */
+
+/* ----------------------------------------------------------- */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* .show-full-item {
+  width: 100%;
+  background: rgb(228, 228, 228);
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+} */
+
+main .item {
+  width: 30%;
+  background: rgb(228, 228, 228);
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.show-full-item img,
+main .item img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.show-full-item img:hover,
+main .item img:hover {
+  transform: scale(1.05);
+}
+
+.show-full-item h2,
+.show-full-item p,
+.show-full-item b,
+main .item h2,
+main .item p,
+main .item b {
+  margin: 10px 20px;
+  color: rgb(50, 50, 50);
+}
+
+.show-full-item .price,
+main .item .price {
+  font-weight: 700;
+  color: rgb(196, 31, 2);
+}
+
+.show-full-item .add-to-card,
+main .add-to-card {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: rgb(133, 20, 0);
+  color: rgb(240, 240, 240);
+  border: 1px solid rgb(133, 20, 0);
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-weight: 700;
+  transition: transform 0.5s ease;
+}
+
+.show-full-item .add-to-card:hover,
+main .add-to-card:hover {
+  background: rgb(196, 31, 2);
+  border: 1px solid rgb(50, 50, 50);
+  transform: scale(1.3) translateY(-5px);
+}
+
+/* ----------------------------------------------------------- */
+.show-full-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(50, 50, 50, 0.7);
+  z-index: 500;
+  overflow: auto;
+}
+
+.show-full-item .modal-full-item {
+  width: 600px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  margin: 10% auto;
+  padding: 30px;
+}
+
+/* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+
+footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* ----------------------------------------------------------- */
